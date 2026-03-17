@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Solution {
+
+    static void decentNumber(int n) {
+        int fives = n;
+        while (fives % 3 != 0 && fives >= 0) {
+            fives -= 5;
+        }
+        if (fives < 0) {
+            System.out.println("-1");
+        } else {
+            int threes = n - fives;
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < fives; i++) sb.append('5');
+            for (int i = 0; i < threes; i++) sb.append('3');
+            System.out.println(sb.toString());
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        for (int i = 0; i < t; i++) {
+            int n = sc.nextInt();
+            decentNumber(n);
+        }
+        sc.close();
+    }
+}
